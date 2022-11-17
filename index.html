@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lodash Tutorial</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+
+    <script type="text/javascript">
+
+        //Lodash is a javascript library have a lot of function related to arrays and objects manupulation.
+        // we can do the same work with JS but there are some functions in lodash that can reduce number of lines of code and easy to use as compared to JS functions.
+
+        // _.chunk(array, any_number)
+        // makes chunks of arrays inside an array
+
+            // var array= [2,3,4,5,6,7,8]
+            // var result= _.chunk(arr, 2)
+            // console.log(result)
+
+
+        // _.compact(array).......(remove all falseeee values and return true values only)
+        // false, "", undefined, NaN  
+
+            // var array = [0,1,2,"",undefined,false,true,NaN, null]
+            // var result = _.compact(array)
+            // console.log(result)
+
+
+
+        // _.concat(array1, array2).......(will concat and we can give any number of parameters)
+        // will return a single array
+        
+            // var array1 = [0,1,2]
+            // var array2 = [3,4,5]
+            // var result = _.concat(array1,array2)
+            // console.log(result)
+
+
+
+        // _.concat(array1, object2).......(can also concat an array with an object)
+        
+            // var array1 = [0,1,2]
+            // var object2 = {a:3, b:4, c:5}
+            // var result = _.concat(array1,object2)
+            // console.log(result)
+
+
+        // _.difference(array1, array2).......(agr hm kisi array m sy kuch values remove krna chahty hn)
+        
+            // var array1 = [0,1,2]
+            // var array2 = [1]
+            // var result = _.difference(array1,array2)
+            // console.log(result)
+
+
+        // _.differenceBy(array1, values, iterationFunction)
+        // pahly 2 parameters to wasy hi hain, 3rd parameter m koi b function perform kry gay pahly phir minus krwaiy gy.
+        
+            // var array1 = [1,4,9]
+            // var array2 = [2,3]
+            // var result = _.differenceBy(array1,array2, Math.double)
+            // console.log(result)
+
+
+
+        // _.drop(array1, how-many-value-you-want-to-delete/drop)
+        // will delete from zero index to onward
+
+            // var array1 = [1,4,9]
+            // var x = 2
+            // var result = _.drop(array1,x)
+            // console.log(result)
+
+
+
+        // _.dropWhile(array1, call-back-function)
+        // will delete based on some condition. will delete those who will fullfil condition
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.dropWhile(array1, (e)=>{return e % 2 === 0})
+            // console.log("result:", result)
+
+
+
+
+        // _.dropRightWhile(array1, call-back-function)
+        // will delete based on some condition. will delete those who will fullfil condition
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.dropRightWhile(array1, (e)=>{return e % 2 === 0})
+            // console.log("result:", result)
+
+
+
+
+
+
+        // _.pull(array1, jo-jo-values-remove-krni-hain)
+        // will delete those values
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.pull(array1, 4,5,6,7)
+            // console.log("result:", result)
+
+
+
+
+        // _.pullAll(array1, [jo-jo-values-remove-krni-hain])
+        // will delete those values...... frk bs ya h k values array m dani hain
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.pullAll(array1, [4,5,6,7])
+            // console.log("result:", result)
+
+
+
+        // _.pullAllBy(array1, [jo-jo-values-remove-krni-hain], function)
+        // will delete those values...... frk bs ya h k values array m dani hain..... ab pahly ak function apply hoga
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.pullAllBy(array1, [4,5,6,7], Math.double)
+            // console.log("result:", result)
+
+
+
+
+        // _.pullAt(array1, [jo-jo-values-remove-krni-hain-unky-index-idr-dany-hain])
+        // will delete those values present at thoses indexes ... and will return deleted values
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.pullAt(array1, [0,1,2])
+            // console.log("result:", result)
+
+
+
+
+        // _.remove(array1, function)
+        // will delete on the basis of function .....and will return array of removed values like pullAt function
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.remove(array1, (e)=>{return e%2===0})
+            // console.log("result:", result)
+
+
+
+        // _.fill(array1, jo-value-fill-krni, startIndex, endIndex)
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.fill(array1, 25, 4, 7)
+            // console.log("result:", result)
+
+
+
+        // in JavaScript   findIndex(function(currentValue, index, arr));
+        // in Lodash       findIndex(array, function, fromIndex);
+        // starts finding from start mean left side
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.findIndex(array1,  (e)=>{return e===7},  2)
+            // console.log("result:", result)
+
+
+
+        // in Lodash       _.findLastIndex(array, function, fromIndex);
+        // starts finding from last mean right side
+
+            // var array1 = [1,2,3,4,5,6,7,8,9]
+            
+            // var result = _.findLastIndex(array1,  (e)=>{return e===7},  -1)
+            // console.log("result:", result)
+
+
+
+            //  _.flatten(array);
+            // convert all the arrays inside an array into a single array (just one step deep jata)
+            // nested arrays ko flat krny k liey use hota in simple words 
+            
+                // var array1 = [[1,2],[3,[5,6,7],4,5],[6,7],[8,9]]
+                
+                // var result = _.flatten(array1)
+                // console.log("result:", result)
+
+
+
+            //  _.flattenDepth(array, kis-level-tk-flat-krna-h);
+            // convert all the arrays inside an array into a single array (unlimited step deep jata)
+            // nested arrays ko flat krny k liey use hota in simple words 
+            
+                // var array1 = [[1,2],[3,[5,6,7],4,5],[6,7],[8,9]]
+                
+                // var result = _.flattenDepth(array1, 2)
+                // console.log("result:", result)
+
+
+
+            //  _.flattenDeep(array);
+            // convert all the arrays inside an array into a single array (unlimited step deep jata khud ba khud)
+            // nested arrays ko flat krny k liey use hota in simple words 
+            
+                // var array1 = [[1,2],[3,[5,6,7],4,5],[6,7],[8,9]]
+                
+                // var result = _.flattenDeep(array1)
+                // console.log("result:", result)
+
+
+
+
+            //  _.fromPairs(pairs-like-array);
+            //agr koi asi "array" ho jis m data pair type ki shape m ho or hmy usy "object" m change krna ho
+            
+                // var array1 = [["one",1],["two",2],["three",3]]
+                
+                // var result = _.fromPairs(array1)
+                // console.log("result:", result)
+
+
+
+                //  _.intersection(array1, array2);
+            
+                // var array1 = [1,2,3]
+                // var array2 = [3,4,5]
+                
+                // var result = _.intersection(array1,array2)
+                // console.log("result:", result)
+
+
+
+
+            //  _.intersectionBy(array1, array2, iteratee)
+            //agr koi function apply krny k bad common values nikalni hon
+            
+                // var array1 = [1,2,3.9, 4.2]
+                // var array2 = [3,4,5]
+                
+                // var result = _.intersectionBy(array1,array2, Math.ceil)
+                // console.log("result:", result)
+
+
+
+
+                //  _.fromPairs(pairs-like-array);
+            //agr koi asi "array" ho jis m data pair type ki shape m ho or hmy usy "object" m change krna ho
+            
+                // var array1 = [["one",1],["two",2],["three",3]]
+                
+                // var result = _.fromPairs(array1)
+                // console.log("result:", result)
+
+
+
+
+            //  _.reverse(array1);
+            //agr reverse order main krna ho elements ko..... but original array ko hi reverse kr dy ga uski copy ni bnaie
+            
+                // var array1 = [1,2,3,4,5]
+                
+                // var result = _.reverse(array1)
+                // console.log("result:", result)
+
+
+
+
+
+            //  _.sortedIndex(array1, value);
+            // agr hmary pass ak array h or hm us m ak value insert krna chahty hain pr wo value us index pr jani chahiey jahan sy agy ki values us value sy bari hon or peeshy ki choti hon to us jga ka index return kry ga
+            
+                // var array1 = [1,2,3,4,5]
+                
+                // var result = _.sortedIndex(array1, 4)
+                // console.log("result:", result)
+
+
+
+
+            //  _.sortedUniq(array)
+            // agr koi values repeat ho k a ri hn to ya hmy bs unique return kry ga
+            
+                // var array1 = [1,2,2,2,3,4,5,5]
+                
+                // var result = _.sortedUniq(array1)
+                // console.log("result:", result)
+
+
+
+
+            //  _.take(array, number)
+            // agr hmary pass kafi bari array or or hm bs start ki kuch values lana chahty hn, to jitni chahiy wo number bta do
+            
+                // var array1 = [1,2,3,4,5,]
+                
+                // var result = _.take(array1, 3)
+                // console.log("result:", result)
+
+
+
+
+            //  _.takeRight(array, number)
+            // agr hmary pass kafi bari array or or hm bs last ki kuch values lana chahty hn, to jitni chahiy wo number bta do
+            
+                // var array1 = [1,2,3,4,5,]
+                
+                // var result = _.takeRight(array1, 3)
+                // console.log("result:", result)
+
+
+
+                // What is Radash?
+                //Its a utility library like lodash but with more super powers written in TypeScript!
+                //Lodash is little bit old , Radash is new.
+
+
+
+    </script>
+</head>
+
+<body>
+    <h2>Lodash</h2>
+</body>
+
+</html>

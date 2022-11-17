@@ -1,0 +1,17 @@
+we can use lodash with react, vue, node etc
+its a js library to make our code small and easy includes about 250 functions
+
+lodsh ki extension m ny vs code main install kr di hwi h or us sy hints milty hn type krty hwy
+
+
+CDN LINK:
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+
+
+Through NPM:
+npm install lodash
+then:
+import _ from "lodash";
+
+
+for node js:
